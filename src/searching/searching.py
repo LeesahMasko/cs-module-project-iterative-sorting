@@ -9,25 +9,25 @@ def linear_search(arr, target):
 
 # Write an iterative implementation of Binary Search
 def binary_search(arr, target):
-    lowest = 0
-    highest = (len(arr) -1)
+    leftMost = 0
+    rightMost = (len(arr) -1)
 
     found = False
 
     # Your code here
-    while lowest <= highest and not found:
-        middle = (lowest + highest) // 2
+    while leftMost < rightMost and not found:
+        middle = ((leftMost + rightMost) // 2)
 
         if arr[middle] == target:
             found = True
 
         else:
             if target < arr[middle]:
-                highest = middle - 1
+                rightMost = middle - 1
             # searching the bottom half
             else:
-                lowest = middle +1
+                leftMost = middle +1
 
-    return found
+    # return found
 
     return -1  # not found
