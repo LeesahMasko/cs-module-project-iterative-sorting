@@ -12,14 +12,16 @@ def binary_search(arr, target):
     leftMost = 0
     rightMost = (len(arr) -1)
 
-    found = False
+    # found = False
 
     # Your code here
-    while leftMost < rightMost and not found:
+
+
+    while leftMost <= rightMost:
         middle = ((leftMost + rightMost) // 2)
 
         if arr[middle] == target:
-            found = True
+            return middle
 
         else:
             if target < arr[middle]:
@@ -28,6 +30,6 @@ def binary_search(arr, target):
             else:
                 leftMost = middle +1
 
-    # return found
+    # return 1 if found else -1
 
     return -1  # not found
